@@ -58,16 +58,16 @@ test('only repeatable content has creation templates, with scoped draft defaults
 test('the five main pages retain their existing production document identities', () => {
   assert.deepEqual(
     mainPages.map(({path}) => path),
-    ['/about', '/contact', '/services', '/portfolio', '/blog'],
+    ['/about', '/contact', '/blog', '/portfolio', '/services'],
   )
   assert.deepEqual(
     mainPages.map(({documentId}) => documentId),
     [
       '6f9fef32-5bed-499c-be1e-09007191baba',
       'b9f47bda-d3af-4a36-9b17-52a9d8505029',
-      'a33d76c0-6f12-4926-9276-2759024908aa',
-      '6cf9fbe2-a09b-4a75-9a20-1abd092baf39',
       'a2cefacb-46d9-4d1a-8519-5546d57197b8',
+      '6cf9fbe2-a09b-4a75-9a20-1abd092baf39',
+      'a33d76c0-6f12-4926-9276-2759024908aa',
     ],
   )
   assert.equal(new Set(mainPages.map(({id}) => id)).size, 5)
@@ -222,7 +222,7 @@ test('actual Structure Builder opens main singleton documents and scopes repeata
   assert.equal(mainPane.type, 'list')
   assert.deepEqual(mainPane.initialValueTemplates ?? [], [])
   assert.equal(mainPane.items.length, 5)
-  const expectedIcons = [UsersIcon, EnvelopeIcon, CaseIcon, ImagesIcon, ComposeIcon]
+  const expectedIcons = [UsersIcon, EnvelopeIcon, ComposeIcon, ImagesIcon, CaseIcon]
   for (const [index, page] of mainPages.entries()) {
     const item = mainPane.items[index]
     assert.equal(item.id, page.id)

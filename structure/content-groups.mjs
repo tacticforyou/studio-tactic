@@ -17,11 +17,11 @@ export const mainPages = [
     path: '/contact',
   },
   {
-    id: 'page-services',
-    title: 'Services overview',
-    documentId: 'a33d76c0-6f12-4926-9276-2759024908aa',
+    id: 'page-blog',
+    title: 'Blog overview',
+    documentId: 'a2cefacb-46d9-4d1a-8519-5546d57197b8',
     kind: 'listing',
-    path: '/services',
+    path: '/blog',
   },
   {
     id: 'page-portfolio',
@@ -31,11 +31,11 @@ export const mainPages = [
     path: '/portfolio',
   },
   {
-    id: 'page-blog',
-    title: 'Blog overview',
-    documentId: 'a2cefacb-46d9-4d1a-8519-5546d57197b8',
+    id: 'page-services',
+    title: 'Services overview',
+    documentId: 'a33d76c0-6f12-4926-9276-2759024908aa',
     kind: 'listing',
-    path: '/blog',
+    path: '/services',
   },
 ]
 
