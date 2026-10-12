@@ -3,6 +3,54 @@
 Standalone Sanity Studio for project `bpblgmmr`, dataset `production`. The Next.js
 website stays in the sibling `tacticforyou` folder.
 
+## Overview dashboard
+
+The default Studio home is `/dashboard`, labeled **Overview** in the tool menu.
+The official `@sanity/dashboard` tool renders a project-specific widget built with
+Sanity UI. Existing `/structure` URLs and content editing remain unchanged.
+
+Overview includes section counts and shortcuts, new Article/Project/Service
+actions using the existing templates, the five Main Page editors, and six recently
+edited documents. Unclassified content stays accessible through a review link when
+present. It performs read-only queries on mount and on **Refresh content**, without
+polling, new credentials, or dataset mutations.
+
+The `drafts` perspective merges draft/published pairs for totals and recent edits.
+A separate `published` query counts **Approved** documents when their Approval
+status is Published. Unpublished changes do not hide the previously approved
+published snapshot. These are content approval counts, not a website availability
+check: the website also validates page metadata and routes. Content bodies and
+image assets are not fetched by the dashboard.
+
+`DashboardRoutingLayout` wraps the default Studio layout in a project-owned React
+context to resolve category links before tool-level routing is scoped. The links
+use the public `useRouter().resolvePathFromState()` and `Link` APIs, preserving
+base paths, browser modifier clicks, and existing structure routes. It does not
+replace the Studio layout or manipulate Sanity's internal router context.
+Singleton document links target their existing named Main Page panes; repeatable
+documents use Sanity's standard edit intents.
+
+Configuration and queries live in `dashboard/`. No Next.js changes or migration
+are required. Deploy the Studio through Vercel to update `studio.tacticforyou.com`;
+Sanity auto-updates do not deploy custom dashboard code. No hosting settings or
+remote deployments are changed by adding this dashboard.
+
+Dashboard commands (from this Studio folder):
+
+```sh
+npm install @sanity/dashboard@^6.0.21 @sanity/ui@^4.4.4
+npm run test:dashboard
+npm run test:structure
+npm run typecheck
+npm run lint
+npm run build
+SANITY_STUDIO_APP_ID=pox5j4a3sxe0k851s2duo72h npm run build
+```
+
+The standard build checks (default app ID and the Vercel override) encountered an
+HTTP 403 while resolving Sanity's auto-update assets in this environment. No
+deprecated build flags or auto-update setting changes were used to bypass it.
+
 ## Content navigation
 
 - **Main Pages:** singleton editors for About, Contact, and the Services,

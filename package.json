@@ -16,13 +16,16 @@
     "schema:validate": "sanity schemas validate",
     "schema:deploy": "sanity schemas deploy",
     "test:migration": "node --experimental-strip-types --test migrations/legacy-text-to-portable-text/*.test.mjs",
-    "test:structure": "node --loader ./node_modules/sanity/mock-browser-env-stub-loader.mjs --experimental-strip-types --test structure/*.test.mjs"
+    "test:structure": "node --loader ./node_modules/sanity/mock-browser-env-stub-loader.mjs --experimental-strip-types --test structure/*.test.mjs",
+    "test:dashboard": "node --experimental-strip-types --test dashboard/*.test.mjs"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
+    "@sanity/dashboard": "^6.0.21",
     "@sanity/icons": "^5.2.3",
+    "@sanity/ui": "^4.4.4",
     "@sanity/vision": "^6.18.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
