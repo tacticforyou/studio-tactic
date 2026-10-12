@@ -1,7 +1,9 @@
 import {CaseIcon} from '@sanity/icons/Case'
 import {ComposeIcon} from '@sanity/icons/Compose'
 import {DocumentIcon} from '@sanity/icons/Document'
+import {EnvelopeIcon} from '@sanity/icons/Envelope'
 import {ImagesIcon} from '@sanity/icons/Images'
+import {UsersIcon} from '@sanity/icons/Users'
 import {WarningOutlineIcon} from '@sanity/icons/WarningOutline'
 import type {StructureResolver} from 'sanity/structure'
 import {contentGroups, contentKinds, mainPages} from './content-groups.mjs'
@@ -11,6 +13,14 @@ const groupIcons: Record<string, typeof DocumentIcon> = {
   articles: ComposeIcon,
   projects: ImagesIcon,
   services: CaseIcon,
+}
+
+const mainPageIcons: Record<string, typeof DocumentIcon> = {
+  'page-about': UsersIcon,
+  'page-contact': EnvelopeIcon,
+  'page-services': CaseIcon,
+  'page-portfolio': ImagesIcon,
+  'page-blog': ComposeIcon,
 }
 
 // Keep initialValueTemplates last on each pane; later builder calls can re-infer all templates.
@@ -27,7 +37,9 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .id('main-pages')
             .title('Main Pages')
-            .singletons(mainPages.map((page) => page.id)),
+            .items(
+              mainPages.map((page) => S.listItem().singleton(page.id).icon(mainPageIcons[page.id])),
+            ),
         ),
       ...contentGroups.slice(1).map((group) =>
         S.listItem()

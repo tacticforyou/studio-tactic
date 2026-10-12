@@ -1,5 +1,10 @@
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
+import {CaseIcon} from '@sanity/icons/Case'
+import {ComposeIcon} from '@sanity/icons/Compose'
+import {EnvelopeIcon} from '@sanity/icons/Envelope'
+import {ImagesIcon} from '@sanity/icons/Images'
+import {UsersIcon} from '@sanity/icons/Users'
 import {createClient} from '@sanity/client'
 import {evaluate, parse} from 'groq-js'
 import {of} from 'rxjs'
@@ -217,10 +222,12 @@ test('actual Structure Builder opens main singleton documents and scopes repeata
   assert.equal(mainPane.type, 'list')
   assert.deepEqual(mainPane.initialValueTemplates ?? [], [])
   assert.equal(mainPane.items.length, 5)
+  const expectedIcons = [UsersIcon, EnvelopeIcon, CaseIcon, ImagesIcon, ComposeIcon]
   for (const [index, page] of mainPages.entries()) {
     const item = mainPane.items[index]
     assert.equal(item.id, page.id)
     assert.equal(item.title, page.title)
+    assert.equal(item.icon, expectedIcons[index])
     assert.equal(item.child.type, 'document')
     assert.equal(item.child.options.id, page.documentId)
     assert.equal(item.child.options.type, 'contentPage')
