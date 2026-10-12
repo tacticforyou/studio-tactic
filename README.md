@@ -49,11 +49,47 @@ Start development manually with `npm run dev`; the default URL is
 [localhost:3333](http://localhost:3333). Existing content edits still require
 approval and publishing before they appear on the website.
 
-To update the team-facing Studio, run `npm run deploy` from this folder and reload
+To update the Sanity-hosted Studio, leave `SANITY_STUDIO_APP_ID` unset locally,
+run `npm run deploy` from this folder, and reload
 [the hosted Studio](https://tacticforyou.sanity.studio/). The navigation update has
 not been deployed by the agent. No Next.js changes or deployment are needed for
 this singleton/navigation update. The earlier Portable Text data cleanup is a
 separate concern.
+
+For the Vercel-hosted Studio at `studio.tacticforyou.com`, set
+`SANITY_STUDIO_APP_ID=pox5j4a3sxe0k851s2duo72h` in the **Studio's Vercel project**
+and rebuild/redeploy through Vercel. `sanity.cli.ts` reads this build-time override;
+when it is unset or empty, it retains the original Sanity-hosted app ID
+`jqjqywmnt0ans8h9nbkikwfl`. Do not put the Vercel value in your local environment
+when you intend to deploy to the original `sanity.studio` instance.
+`autoUpdates: true` is unchanged. Auto-updates update Sanity's core software, not
+your schemas or custom navigation; code changes still need a new deployment.
+No Vercel settings or deployments were changed by this configuration edit.
+
+The app-ID change was checked with public Node imports of `sanity.cli.ts` in two
+separate processes: unset and overridden `SANITY_STUDIO_APP_ID`. Assertions
+confirmed the expected ID and `autoUpdates: true` in both cases; no network
+requests, builds, deployments, or persistent environment changes were involved.
+
+The CLI config imports Node's public `node:process` module. The Studio's development
+dependency `@types/node` and `tsconfig.json`'s `types: ["node"]` explicitly enable
+Node typings for TypeScript 6; they do not change the Studio runtime.
+
+App-ID verification commands (from this Studio folder):
+
+```sh
+npm install --save-dev @types/node@22
+npm run lint
+npm run typecheck
+npx prettier --check sanity.cli.ts README.md
+git diff --check
+```
+
+The Node typings addition was separately approved after type checking reported
+missing `process`/`node:process` definitions. Public `node
+--experimental-strip-types --input-type=module -e` checks imported the actual CLI
+config in separate processes and asserted the original fallback and Vercel
+override, with auto-updates still enabled in both.
 
 ## Previous grouping verification and commands
 
