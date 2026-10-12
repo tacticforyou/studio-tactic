@@ -9,12 +9,18 @@
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
     "dev": "sanity dev",
-    "start": "sanity start"
+    "start": "sanity start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "typegen": "sanity schemas extract --force && sanity typegen generate",
+    "schema:validate": "sanity schemas validate",
+    "schema:deploy": "sanity schemas deploy"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
+    "@sanity/icons": "^5.2.3",
     "@sanity/vision": "^6.18.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
