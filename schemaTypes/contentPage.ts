@@ -97,9 +97,73 @@ export const contentPage = defineType({
       title: 'Page content',
       type: 'array',
       of: [
-        defineArrayMember({type: 'paragraphBlock'}),
-        defineArrayMember({type: 'headingBlock'}),
-        defineArrayMember({type: 'listBlock'}),
+        defineArrayMember({
+          type: 'block',
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'Heading 2', value: 'h2'},
+            {title: 'Heading 3', value: 'h3'},
+            {title: 'Quote', value: 'blockquote'},
+          ],
+          lists: [
+            {title: 'Bullet', value: 'bullet'},
+            {title: 'Numbered', value: 'number'},
+          ],
+          marks: {
+            decorators: [
+              {title: 'Bold', value: 'strong'},
+              {title: 'Italic', value: 'em'},
+              {title: 'Code', value: 'code'},
+              {title: 'Underline', value: 'underline'},
+              {title: 'Strikethrough', value: 'strike-through'},
+            ],
+            annotations: [
+              {
+                name: 'link',
+                title: 'Link',
+                type: 'object',
+                fields: [
+                  defineField({
+                    name: 'href',
+                    title: 'URL',
+                    type: 'url',
+                    validation: (rule) =>
+                      rule
+                        .required()
+                        .uri({allowRelative: true, scheme: ['http', 'https', 'mailto', 'tel']})
+                        .custom((href) => {
+                          if (!href) return true
+                          if (
+                            /[\u0000-\u0020\u007f\\]/.test(href) ||
+                            href.startsWith('//') ||
+                            !/^(?:\/|#|https?:|mailto:|tel:)/i.test(href)
+                          ) {
+                            return 'Use a web, email, telephone, root-relative, or anchor link.'
+                          }
+                          if (!href.startsWith('/') && !href.startsWith('#')) {
+                            try {
+                              const url = new URL(href)
+                              if (url.username || url.password) {
+                                return 'Links cannot contain embedded usernames or passwords.'
+                              }
+                            } catch {
+                              return 'Enter a valid web, email, or telephone URL.'
+                            }
+                          }
+                          return true
+                        }),
+                  }),
+                  defineField({
+                    name: 'openInNewTab',
+                    title: 'Open in new tab',
+                    type: 'boolean',
+                    initialValue: false,
+                  }),
+                ],
+              },
+            ],
+          },
+        }),
         defineArrayMember({type: 'imageBlock'}),
       ],
       validation: (rule) => rule.required(),

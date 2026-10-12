@@ -14,7 +14,8 @@
     "typecheck": "tsc --noEmit",
     "typegen": "sanity schemas extract --force && sanity typegen generate",
     "schema:validate": "sanity schemas validate",
-    "schema:deploy": "sanity schemas deploy"
+    "schema:deploy": "sanity schemas deploy",
+    "test:migration": "node --experimental-strip-types --test migrations/legacy-text-to-portable-text/*.test.mjs"
   },
   "keywords": [
     "sanity"

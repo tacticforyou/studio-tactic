@@ -1,11 +1,4 @@
 import {contentPage} from './contentPage'
-import {headingBlock, imageBlock, listBlock, paragraphBlock, siteImage} from './contentBlocks'
+import {imageBlock, siteImage} from './contentBlocks'
 
-export const schemaTypes = [
-  contentPage,
-  siteImage,
-  paragraphBlock,
-  headingBlock,
-  listBlock,
-  imageBlock,
-]
+export const schemaTypes = [contentPage, siteImage, imageBlock]
