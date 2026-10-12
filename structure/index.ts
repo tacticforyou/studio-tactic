@@ -4,7 +4,7 @@ import {DocumentIcon} from '@sanity/icons/Document'
 import {ImagesIcon} from '@sanity/icons/Images'
 import {WarningOutlineIcon} from '@sanity/icons/WarningOutline'
 import type {StructureResolver} from 'sanity/structure'
-import {contentGroups, contentKinds} from './content-groups.mjs'
+import {contentGroups, contentKinds, mainPages} from './content-groups.mjs'
 
 const groupIcons: Record<string, typeof DocumentIcon> = {
   'main-pages': DocumentIcon,
@@ -19,7 +19,17 @@ export const structure: StructureResolver = (S) =>
     .id('website-content')
     .title('Website Content')
     .items([
-      ...contentGroups.map((group) =>
+      S.listItem()
+        .id('main-pages')
+        .title('Main Pages')
+        .icon(DocumentIcon)
+        .child(
+          S.list()
+            .id('main-pages')
+            .title('Main Pages')
+            .singletons(mainPages.map((page) => page.id)),
+        ),
+      ...contentGroups.slice(1).map((group) =>
         S.listItem()
           .id(group.id)
           .title(group.title)
@@ -42,7 +52,7 @@ export const structure: StructureResolver = (S) =>
           ),
       ),
       S.divider(),
-      // Keep incomplete drafts reachable without mixing them into the editorial sections.
+      // Keep incomplete or imported noncanonical main pages reachable for manual cleanup.
       S.listItem()
         .id('unclassified-pages')
         .title('Unclassified')
@@ -52,8 +62,15 @@ export const structure: StructureResolver = (S) =>
             .id('unclassified-pages')
             .title('Unclassified')
             .apiVersion('2026-02-01')
-            .filter('_type == "contentPage" && (!defined(kind) || !(kind in $kinds))')
-            .params({kinds: contentKinds})
+            .filter(
+              '_type == "contentPage" && !(string::split(_id, ".")[-1] in $mainPageIds) && (!defined(kind) || !(kind in $kinds) || kind in $mainKinds || path in $mainPaths)',
+            )
+            .params({
+              kinds: contentKinds,
+              mainKinds: contentGroups[0].kinds,
+              mainPaths: mainPages.map((page) => page.path),
+              mainPageIds: mainPages.map((page) => page.documentId),
+            })
             .canHandleIntent(() => false)
             .initialValueTemplates([]),
         ),

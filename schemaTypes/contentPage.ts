@@ -1,5 +1,6 @@
 import {DocumentIcon} from '@sanity/icons/Document'
 import {defineArrayMember, defineField, defineType} from 'sanity'
+import {getMainPage, validateMainPagePath} from '../structure/content-groups.mjs'
 
 const contentPath =
   /^\/(?:about|contact|services|portfolio|blog)$|^\/(?:services|portfolio|blog)\/[a-z0-9]+(?:-[a-z0-9]+)*$/
@@ -26,12 +27,16 @@ export const contentPage = defineType({
       title: 'Page path',
       type: 'string',
       description: 'For example, /about, /blog, or /blog/considered-design.',
+      readOnly: ({document}) => Boolean(getMainPage(document?._id)),
       validation: (rule) =>
         rule.required().custom(async (path, context) => {
           if (!path) return true
           if (!contentPath.test(path)) {
             return 'Use /about, /contact, a section root, or a lowercase slug under /services, /portfolio, or /blog.'
           }
+
+          const mainPageValidation = validateMainPagePath(path, context.document?._id)
+          if (mainPageValidation !== true) return mainPageValidation
 
           const id = context.document?._id?.replace(/^drafts\./, '')
           const client = context.getClient({apiVersion: '2026-02-01'})
@@ -47,6 +52,7 @@ export const contentPage = defineType({
       name: 'kind',
       title: 'Page kind',
       type: 'string',
+      readOnly: ({document}) => Boolean(getMainPage(document?._id)),
       options: {
         list: [
           {title: 'Section listing', value: 'listing'},
