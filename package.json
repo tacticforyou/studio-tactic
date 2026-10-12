@@ -15,7 +15,8 @@
     "typegen": "sanity schemas extract --force && sanity typegen generate",
     "schema:validate": "sanity schemas validate",
     "schema:deploy": "sanity schemas deploy",
-    "test:migration": "node --experimental-strip-types --test migrations/legacy-text-to-portable-text/*.test.mjs"
+    "test:migration": "node --experimental-strip-types --test migrations/legacy-text-to-portable-text/*.test.mjs",
+    "test:structure": "node --loader ./node_modules/sanity/mock-browser-env-stub-loader.mjs --experimental-strip-types --test structure/*.test.mjs"
   },
   "keywords": [
     "sanity"
