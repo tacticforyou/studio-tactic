@@ -46,9 +46,10 @@ npm run lint
 npm run build
 ```
 
-Earlier standard build checks encountered an HTTP 403 while resolving Sanity's
-auto-update assets in this environment. No
-deprecated build flags or auto-update setting changes were used to bypass it.
+Production builds now bundle the locally installed Studio and dashboard together.
+This avoids the mixed-version Sanity UI styles that made dashboard buttons cover
+the viewport in the auto-updating deployment. No inline-style overrides or
+generated CSS class patches are used.
 
 ## Content navigation
 
@@ -107,9 +108,20 @@ command is `npm run build`, and the generated output directory is `dist`.
 override; it is no longer required for this Vercel deployment. If already set in
 Vercel, keep it equal to the registered application ID above. Do not use an ID for
 a deleted application.
-`autoUpdates: true` is unchanged. Auto-updates update Sanity's core software, not
-your schemas or custom navigation; code changes still need a new deployment.
-No Vercel settings or deployments were changed by this configuration edit.
+`deployment.autoUpdates: false` disables CDN-delivered Studio core updates. The
+Studio and dashboard use the same locally bundled Sanity UI dependency instead
+of combining local dashboard styles with a separately updated CDN core. This is
+Sanity's [documented opt-out](https://www.sanity.io/docs/studio/latest-version-of-sanity#opting-out),
+not a requirement for every dashboard.
+
+Upgrade Studio dependencies deliberately, run the checks above, and rebuild and
+redeploy through Vercel to receive software updates. Content editing and publishing
+are unchanged; publishing content does not require a rebuild. This setting takes
+effect for the team only after the Studio's Vercel project is rebuilt and deployed.
+There are no new environment variables. The app-ID override remains supported.
+Re-enable auto-updates only after the mixed-version styling issue is resolved and
+an auto-updating production build has been verified.
+No remote Vercel or Sanity settings or deployments were changed by this edit.
 
 The CLI config imports Node's public `node:process` module. The Studio's development
 dependency `@types/node` and `tsconfig.json`'s `types: ["node"]` explicitly enable
@@ -151,8 +163,9 @@ npx prettier --write package.json structure/content-groups.test.mjs README.md
 
 Lint, type checking, five focused tests, and schema validation passed (zero schema
 errors/warnings). The default build received HTTP 403 from the auto-update CDN;
-the temporary `--no-auto-updates` build passed without changing saved
-`deployment.autoUpdates: true`. That flag is deprecated by the CLI. Formatting
+the temporary `--no-auto-updates` build passed without changing the then-enabled
+auto-update setting. That flag is deprecated by the CLI; current builds use the
+saved `deployment.autoUpdates: false` setting described above. Formatting
 rewrote only the named local files. Git checks were read-only and found no
 whitespace errors.
 
@@ -203,7 +216,8 @@ with network requests rejected, verify singleton templates/actions, and evaluate
 the recovery GROQ locally. The first test run had one incorrect assertion about
 empty paths; it was corrected to leave missing-value handling to `required()`.
 The local build passed using the temporary deprecated `--no-auto-updates` flag;
-saved `deployment.autoUpdates: true` is unchanged. The build only regenerated
+that historical check left auto-updates enabled. Current builds use the saved
+`deployment.autoUpdates: false` setting described above. The build only regenerated
 ignored local output; it did not deploy the Studio. Formatting changed only the
 named files. Git checks found no whitespace errors. `Get-Content`,
 `Get-ChildItem`, `rg`, and `git status --short` inspected local files and the

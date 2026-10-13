@@ -17,10 +17,7 @@ export default defineCliConfig({
   },
   deployment: {
     appId: process.env.SANITY_STUDIO_APP_ID || 'pox5j4a3sxe0k851s2duo72h',
-    /**
-     * Enable auto-updates for studios.
-     * Learn more at https://www.sanity.io/docs/studio/latest-version-of-sanity#k47faf43faf56
-     */
-    autoUpdates: true,
+    // Bundle core and dashboard UI together to avoid mixed-version CSS collisions.
+    autoUpdates: false,
   },
 })
