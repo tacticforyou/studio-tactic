@@ -13,11 +13,14 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "typegen": "sanity schemas extract --force && sanity typegen generate",
+    "dataset:export": "sanity datasets export production",
+    "dataset:import": "sanity datasets import",
     "schema:validate": "sanity schemas validate",
     "schema:deploy": "sanity schemas deploy",
     "test:migration": "node --experimental-strip-types --test migrations/legacy-text-to-portable-text/*.test.mjs",
     "test:structure": "node --loader ./node_modules/sanity/mock-browser-env-stub-loader.mjs --experimental-strip-types --test structure/*.test.mjs",
-    "test:dashboard": "node --experimental-strip-types --test dashboard/*.test.mjs"
+    "test:dashboard": "node --experimental-strip-types --test dashboard/*.test.mjs",
+    "test:inputs": "node --loader ./node_modules/sanity/mock-browser-env-stub-loader.mjs --experimental-strip-types --test components/*.test.mjs"
   },
   "keywords": [
     "sanity"
@@ -30,12 +33,14 @@
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "sanity": "^6.18.0",
+    "speakingurl": "^14.0.1",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^7",
     "@types/node": "^22.20.5",
     "@types/react": "^19.2.14",
+    "@types/speakingurl": "^13.0.6",
     "eslint": "^10.8.1",
     "prettier": "^3.5",
     "typescript": "~6.0"

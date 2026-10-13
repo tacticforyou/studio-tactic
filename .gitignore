@@ -30,3 +30,4 @@
 
 # Dataset exports may contain unpublished/private content.
 /backups
+/*.tar.gz

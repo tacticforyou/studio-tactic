@@ -91,6 +91,81 @@ are applied in `schemaTypes/contentPage.ts`. Keep
 builder can re-infer all type templates after later calls. Search results use
 Sanity's fallback editor instead of incorrectly opening articles under Main Pages.
 
+## Generated page paths
+
+Article, Project, and Service editors have a **Generate** button beside Page path.
+Enter a title and choose the page kind first. For example, `Considered Design`
+generates `/blog/considered-design` for an Article, `/portfolio/considered-design`
+for a Project, or `/services/considered-design` for a Service. Main Page paths
+remain fixed and read-only, with no generator.
+
+Generation is an explicit editor action, not an automatic reaction to title
+changes. Existing values stay unchanged until an editor clicks Generate or edits
+the path manually. Regenerating a published page's path changes its URL; this
+feature does not create redirects. Existing uniqueness and kind/path validation
+still apply, so duplicate paths must be resolved before publishing.
+
+The stored `path` remains a string. Sanity's
+[documented custom input API](https://www.sanity.io/docs/studio/form-components-reference)
+adds the button without changing production data, schema field types, queries, or the
+Next.js app. `speakingurl`, the same slugification library used by Sanity's native
+slug input, is an explicit dependency; its type definitions are a development
+dependency. Generated slugs are capped at 200 characters and must match the
+website's lowercase ASCII route format. Empty or unsupported titles/kinds cannot
+generate a path. Redeploy this standalone Studio through Vercel to show the
+control to the team; no data migration or Next.js deployment is needed.
+
+```sh
+npm run test:inputs
+```
+
+## Dataset import and export
+
+These commands use the official Sanity CLI and the configured project
+`bpblgmmr`. They are terminal operations, not new Studio buttons. Sign in with
+`npx sanity login` if needed; use a role with the appropriate dataset access.
+
+Export production to a named file in the gitignored `backups` directory:
+
+```sh
+npm run dataset:export -- ./backups/production-2026-10-13.tar.gz
+```
+
+Use a fresh filename for later snapshots. The CLI creates missing parent
+directories and refuses to overwrite an existing file unless `--overwrite` is
+explicitly supplied. If no filename is supplied, the CLI may write
+`production.tar.gz` in the Studio root; root-level `.tar.gz` files are also
+gitignored. Exports contain drafts and asset binaries by default. Treat them as
+private and store them securely outside Git. Check the output for failed asset
+downloads: a completed export can still report missing binaries. Do not use
+`--no-assets` for a restorable snapshot because it strips asset references.
+
+Imports write to Content Lake. Test with an empty non-production dataset before
+restoring production. For example, if a `staging` dataset already exists:
+
+```sh
+npm run dataset:import -- ./backups/production-2026-10-13.tar.gz --dataset staging
+```
+
+The import script does not hardcode a target dataset or an overwrite option.
+Always choose the target deliberately with `--dataset`; otherwise the CLI asks
+you to choose one. Existing document IDs are not replaced by default. `--missing`
+skips existing IDs; `--replace` overwrites matching IDs and must only be added
+after reviewing the destination and taking a snapshot. It does not delete extra
+documents in the target. Imports can partially apply, bypass Studio validation,
+and trigger webhooks or functions. Imported published documents may become
+public immediately. Importing arbitrary content does not reserve website paths
+or remap the five singleton IDs for you; review imported content before use.
+
+These exports are content snapshots, not full project backups: Studio source,
+configuration, permissions, and revision history are separate. No export, import,
+dataset creation, or production mutation was performed while adding these scripts.
+No new credentials or environment variables are required by this setup.
+
+References: [Exporting data](https://www.sanity.io/docs/content-lake/exporting-data),
+[Importing data](https://www.sanity.io/docs/content-lake/importing-data),
+and [Sanity dataset commands](https://www.sanity.io/docs/cli-reference/cli-datasets).
+
 ## Run and deploy
 
 Start development manually with `npm run dev`; the default URL is

@@ -1,5 +1,6 @@
 import {DocumentIcon} from '@sanity/icons/Document'
 import {defineArrayMember, defineField, defineType} from 'sanity'
+import {PagePathInput} from '../components/PagePathInput.mjs'
 import {getMainPage, validateMainPagePath} from '../structure/content-groups.mjs'
 
 const contentPath =
@@ -27,6 +28,7 @@ export const contentPage = defineType({
       title: 'Page path',
       type: 'string',
       description: 'For example, /about, /blog, or /blog/considered-design.',
+      components: {input: PagePathInput},
       readOnly: ({document}) => Boolean(getMainPage(document?._id)),
       validation: (rule) =>
         rule.required().custom(async (path, context) => {
