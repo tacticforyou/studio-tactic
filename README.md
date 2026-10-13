@@ -44,11 +44,10 @@ npm run test:structure
 npm run typecheck
 npm run lint
 npm run build
-SANITY_STUDIO_APP_ID=pox5j4a3sxe0k851s2duo72h npm run build
 ```
 
-The standard build checks (default app ID and the Vercel override) encountered an
-HTTP 403 while resolving Sanity's auto-update assets in this environment. No
+Earlier standard build checks encountered an HTTP 403 while resolving Sanity's
+auto-update assets in this environment. No
 deprecated build flags or auto-update setting changes were used to bypass it.
 
 ## Content navigation
@@ -97,27 +96,20 @@ Start development manually with `npm run dev`; the default URL is
 [localhost:3333](http://localhost:3333). Existing content edits still require
 approval and publishing before they appear on the website.
 
-To update the Sanity-hosted Studio, leave `SANITY_STUDIO_APP_ID` unset locally,
-run `npm run deploy` from this folder, and reload
-[the hosted Studio](https://tacticforyou.sanity.studio/). The navigation update has
-not been deployed by the agent. No Next.js changes or deployment are needed for
-this singleton/navigation update. The earlier Portable Text data cleanup is a
-separate concern.
+The Studio is hosted only on Vercel at
+[studio.tacticforyou.com](https://studio.tacticforyou.com). Rebuild/redeploy the
+**Studio's Vercel project** after schema, editor, or dashboard changes. Its build
+command is `npm run build`, and the generated output directory is `dist`.
+`npm run deploy` targets Sanity's hosting service, not this Vercel deployment.
 
-For the Vercel-hosted Studio at `studio.tacticforyou.com`, set
-`SANITY_STUDIO_APP_ID=pox5j4a3sxe0k851s2duo72h` in the **Studio's Vercel project**
-and rebuild/redeploy through Vercel. `sanity.cli.ts` reads this build-time override;
-when it is unset or empty, it retains the original Sanity-hosted app ID
-`jqjqywmnt0ans8h9nbkikwfl`. Do not put the Vercel value in your local environment
-when you intend to deploy to the original `sanity.studio` instance.
+`sanity.cli.ts` defaults to this Studio's registered application ID,
+`pox5j4a3sxe0k851s2duo72h`. `SANITY_STUDIO_APP_ID` remains an optional build-time
+override; it is no longer required for this Vercel deployment. If already set in
+Vercel, keep it equal to the registered application ID above. Do not use an ID for
+a deleted application.
 `autoUpdates: true` is unchanged. Auto-updates update Sanity's core software, not
 your schemas or custom navigation; code changes still need a new deployment.
 No Vercel settings or deployments were changed by this configuration edit.
-
-The app-ID change was checked with public Node imports of `sanity.cli.ts` in two
-separate processes: unset and overridden `SANITY_STUDIO_APP_ID`. Assertions
-confirmed the expected ID and `autoUpdates: true` in both cases; no network
-requests, builds, deployments, or persistent environment changes were involved.
 
 The CLI config imports Node's public `node:process` module. The Studio's development
 dependency `@types/node` and `tsconfig.json`'s `types: ["node"]` explicitly enable
@@ -134,10 +126,8 @@ git diff --check
 ```
 
 The Node typings addition was separately approved after type checking reported
-missing `process`/`node:process` definitions. Public `node
---experimental-strip-types --input-type=module -e` checks imported the actual CLI
-config in separate processes and asserted the original fallback and Vercel
-override, with auto-updates still enabled in both.
+missing `process`/`node:process` definitions. CLI configuration checks use public
+Node imports without changing persistent environment variables or remote settings.
 
 ## Previous grouping verification and commands
 

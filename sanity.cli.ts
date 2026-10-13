@@ -16,7 +16,7 @@ export default defineCliConfig({
     formatGeneratedCode: false,
   },
   deployment: {
-    appId: process.env.SANITY_STUDIO_APP_ID || 'jqjqywmnt0ans8h9nbkikwfl',
+    appId: process.env.SANITY_STUDIO_APP_ID || 'pox5j4a3sxe0k851s2duo72h',
     /**
      * Enable auto-updates for studios.
      * Learn more at https://www.sanity.io/docs/studio/latest-version-of-sanity#k47faf43faf56
