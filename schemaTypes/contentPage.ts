@@ -92,6 +92,13 @@ export const contentPage = defineType({
     }),
     defineField({name: 'title', type: 'string', validation: (rule) => rule.required()}),
     defineField({
+      name: 'seoTitle',
+      title: 'Search and sharing title',
+      type: 'string',
+      description:
+        'Optional title for search results and social previews. The page title is used when empty.',
+    }),
+    defineField({
       name: 'description',
       type: 'text',
       rows: 3,
@@ -100,6 +107,50 @@ export const contentPage = defineType({
     defineField({name: 'eyebrow', title: 'Section label', type: 'string'}),
     defineField({name: 'hero', title: 'Hero image', type: 'siteImage'}),
     defineField({name: 'socialImage', title: 'Social sharing image', type: 'siteImage'}),
+    defineField({
+      name: 'teamIntro',
+      title: 'Team introduction',
+      type: 'text',
+      rows: 3,
+      hidden: ({document}) => document?.kind !== 'about',
+    }),
+    defineField({
+      name: 'team',
+      title: 'People of TACTIC',
+      type: 'array',
+      description:
+        'Add real team members when their portraits are ready. Leave empty to show the studio portrait studies.',
+      hidden: ({document}) => document?.kind !== 'about',
+      of: [
+        defineArrayMember({
+          name: 'teamMember',
+          title: 'Team member',
+          type: 'object',
+          fields: [
+            defineField({name: 'name', type: 'string', validation: (rule) => rule.required()}),
+            defineField({name: 'role', type: 'string', validation: (rule) => rule.required()}),
+            defineField({
+              name: 'bio',
+              title: 'Short biography',
+              type: 'text',
+              rows: 3,
+              validation: (rule) => rule.max(240),
+            }),
+            defineField({
+              name: 'portrait',
+              type: 'siteImage',
+              description:
+                'Use a 4:5 chest-up portrait with a simple background. Set the hotspot on the face and add descriptive alternative text.',
+              validation: (rule) => rule.required(),
+            }),
+          ],
+          preview: {
+            select: {title: 'name', subtitle: 'role', media: 'portrait'},
+          },
+        }),
+      ],
+      validation: (rule) => rule.max(12),
+    }),
     defineField({
       name: 'blocks',
       title: 'Page content',
