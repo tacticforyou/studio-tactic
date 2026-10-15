@@ -119,7 +119,7 @@ export const contentPage = defineType({
       title: 'People of TACTIC',
       type: 'array',
       description:
-        'Add real team members when their portraits are ready. Leave empty to show the studio portrait studies.',
+        'Arrange the people cards here. Replace the illustrated stand-ins with your team’s photos, names and introductions when ready.',
       hidden: ({document}) => document?.kind !== 'about',
       of: [
         defineArrayMember({
@@ -127,6 +127,14 @@ export const contentPage = defineType({
           title: 'Team member',
           type: 'object',
           fields: [
+            defineField({
+              name: 'isPlaceholder',
+              title: 'Illustrated stand-in',
+              type: 'boolean',
+              initialValue: false,
+              description:
+                'Keep enabled for fictional portrait studies. Turn off after replacing the image and details with a real team member.',
+            }),
             defineField({name: 'name', type: 'string', validation: (rule) => rule.required()}),
             defineField({name: 'role', type: 'string', validation: (rule) => rule.required()}),
             defineField({
