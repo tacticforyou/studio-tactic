@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {CaseIcon} from '@sanity/icons/Case'
 import {ComposeIcon} from '@sanity/icons/Compose'
+import {DocumentIcon} from '@sanity/icons/Document'
 import {EnvelopeIcon} from '@sanity/icons/Envelope'
 import {ImagesIcon} from '@sanity/icons/Images'
 import {UsersIcon} from '@sanity/icons/Users'
@@ -21,18 +22,19 @@ import {
   validateMainPagePath,
 } from './content-groups.mjs'
 import {structure} from './index.ts'
+import {privacyInitialValue} from './privacy-initial-value.mjs'
 
-test('sidebar groups keep the six supported kinds in separate sections', () => {
+test('sidebar groups keep the seven supported kinds in separate sections', () => {
   assert.deepEqual(
     contentGroups.map(({title}) => title),
     ['Main Pages', 'Articles', 'Projects', 'Services'],
   )
-  assert.deepEqual(contentGroups[0].kinds, ['about', 'contact', 'listing'])
+  assert.deepEqual(contentGroups[0].kinds, ['about', 'contact', 'listing', 'privacy'])
   assert.deepEqual(
     contentGroups.slice(1).map(({kinds}) => kinds),
     [['article'], ['project'], ['service']],
   )
-  assert.equal(new Set(contentKinds).size, 6)
+  assert.equal(new Set(contentKinds).size, 7)
   assert.deepEqual(contentGroups[0].templates, [])
 })
 
@@ -55,10 +57,10 @@ test('only repeatable content has creation templates, with scoped draft defaults
   assert.equal(new Set(contentTemplates.map(({id}) => id)).size, contentTemplates.length)
 })
 
-test('the five main pages retain their existing production document identities', () => {
+test('main pages retain the five production identities and add a fixed Privacy document', () => {
   assert.deepEqual(
     mainPages.map(({path}) => path),
-    ['/about', '/contact', '/blog', '/portfolio', '/services'],
+    ['/about', '/contact', '/blog', '/portfolio', '/services', '/privacy'],
   )
   assert.deepEqual(
     mainPages.map(({documentId}) => documentId),
@@ -68,10 +70,11 @@ test('the five main pages retain their existing production document identities',
       'a2cefacb-46d9-4d1a-8519-5546d57197b8',
       '6cf9fbe2-a09b-4a75-9a20-1abd092baf39',
       'a33d76c0-6f12-4926-9276-2759024908aa',
+      'page-privacy',
     ],
   )
-  assert.equal(new Set(mainPages.map(({id}) => id)).size, 5)
-  assert.equal(new Set(mainPages.map(({documentId}) => documentId)).size, 5)
+  assert.equal(new Set(mainPages.map(({id}) => id)).size, 6)
+  assert.equal(new Set(mainPages.map(({documentId}) => documentId)).size, 6)
   for (const {id, kind, path} of mainPages) {
     assert.ok(id.startsWith('page-'))
     assert.ok(contentGroups[0].kinds.includes(kind))
@@ -149,6 +152,58 @@ test('schema locks main-page identity fields and guards reserved routes before u
   assert.equal(fetches, 0)
   assert.equal(await validatePath('/blog/ordinary-article', context), true)
   assert.equal(fetches, 1)
+  context.document = {_id: 'page-privacy'}
+  assert.equal(await validatePath('/privacy', context), true)
+  assert.equal(fetches, 2)
+  assert.equal(typeof (await validatePath('/privacy/subpage', context)), 'string')
+  assert.equal(fetches, 2)
+})
+
+test('Privacy has its own kind and only section listings allow absent page content', () => {
+  const kindField = contentPage.fields.find(({name}) => name === 'kind')
+  let validateKind
+  const rule = {
+    required: () => rule,
+    custom: (validate) => {
+      validateKind = validate
+      return rule
+    },
+  }
+  kindField.validation(rule)
+  assert.ok(kindField.options.list.some(({value}) => value === 'privacy'))
+  assert.equal(validateKind('privacy', {document: {path: '/privacy'}}), true)
+  assert.equal(typeof validateKind('about', {document: {path: '/privacy'}}), 'string')
+  const blocksField = contentPage.fields.find(({name}) => name === 'blocks')
+  let validateBlocks
+  blocksField.validation({custom: (validate) => (validateBlocks = validate)})
+  for (const value of [undefined, null, []]) {
+    assert.equal(validateBlocks(value, {document: {kind: 'listing'}}), true)
+  }
+  for (const kind of contentKinds.filter((kind) => kind !== 'listing')) {
+    assert.equal(typeof validateBlocks(undefined, {document: {kind}}), 'string')
+    assert.equal(typeof validateBlocks(null, {document: {kind}}), 'string')
+    assert.equal(validateBlocks([], {document: {kind}}), true)
+  }
+})
+
+test('new Privacy singleton drafts start with the existing notice as native Portable Text', async () => {
+  const source = await getSource()
+  const initialValue = source.templates.find(({id}) => id === 'page-privacy').value
+  assert.equal(initialValue.kind, 'privacy')
+  assert.equal(initialValue.path, '/privacy')
+  assert.equal(initialValue.status, 'draft')
+  assert.equal(initialValue.title, 'Privacy notice')
+  assert.equal(initialValue.description, privacyInitialValue.description)
+  assert.deepEqual(initialValue.blocks, privacyInitialValue.blocks)
+  assert.equal(initialValue.blocks.length, 12)
+  for (const [index, block] of initialValue.blocks.entries()) {
+    assert.equal(block._type, 'block')
+    assert.equal(block._key, `text-${index + 1}`)
+    assert.equal(block.style, index % 2 === 0 ? 'h2' : 'normal')
+    assert.deepEqual(block.markDefs, [])
+    assert.equal(block.children[0]._type, 'span')
+    assert.ok(block.children[0].text)
+  }
 })
 
 test('template filtering removes legacy main creation but retains native singleton and other templates', () => {
@@ -221,8 +276,8 @@ test('actual Structure Builder opens main singleton documents and scopes repeata
   const mainPane = items[0].child
   assert.equal(mainPane.type, 'list')
   assert.deepEqual(mainPane.initialValueTemplates ?? [], [])
-  assert.equal(mainPane.items.length, 5)
-  const expectedIcons = [UsersIcon, EnvelopeIcon, ComposeIcon, ImagesIcon, CaseIcon]
+  assert.equal(mainPane.items.length, 6)
+  const expectedIcons = [UsersIcon, EnvelopeIcon, ComposeIcon, ImagesIcon, CaseIcon, DocumentIcon]
   for (const [index, page] of mainPages.entries()) {
     const item = mainPane.items[index]
     assert.equal(item.id, page.id)
@@ -344,13 +399,13 @@ function getSource() {
       templates: contentPageTemplates,
     },
     document: {
-      singletons: mainPages.map(({id, title, documentId, kind, path}) =>
+      singletons: mainPages.map(({id, title, documentId, kind, path, initialValue}) =>
         defineSingleton({
           id,
           title,
           documentId,
           schemaType: 'contentPage',
-          initialValue: {kind, path, status: 'draft', blocks: []},
+          initialValue: {kind, path, status: 'draft', blocks: [], ...initialValue},
         }),
       ),
     },

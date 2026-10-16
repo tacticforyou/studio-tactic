@@ -43,7 +43,15 @@ test('missing titles, empty slugs, and nonrepeatable kinds cannot generate a pat
   for (const title of [undefined, null, 123, '', '   ', '!!!']) {
     assert.equal(generateContentPath({title, kind: 'article'}), undefined)
   }
-  for (const kind of [undefined, 'about', 'contact', 'listing', 'unknown', '__proto__']) {
+  for (const kind of [
+    undefined,
+    'about',
+    'contact',
+    'privacy',
+    'listing',
+    'unknown',
+    '__proto__',
+  ]) {
     assert.equal(generateContentPath({title: 'Page title', kind}), undefined)
   }
 })

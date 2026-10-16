@@ -10,7 +10,7 @@ The official `@sanity/dashboard` tool renders a project-specific widget built wi
 Sanity UI. Existing `/structure` URLs and content editing remain unchanged.
 
 Overview includes section counts and shortcuts, new Article/Project/Service
-actions using the existing templates, the five Main Page editors, and six recently
+actions using the existing templates, the six Main Page editors, and six recently
 edited documents. Unclassified content stays accessible through a review link when
 present. It performs read-only queries on mount and on **Refresh content**, without
 polling, new credentials, or dataset mutations.
@@ -53,8 +53,9 @@ generated CSS class patches are used.
 
 ## Content navigation
 
-- **Main Pages:** singleton editors for About, Contact, and the Services,
-  Portfolio, and Blog overviews. Each opens its existing production document.
+- **Main Pages:** singleton editors for About, Contact, Privacy, and the Services,
+  Portfolio, and Blog overviews. The original five keep their production document
+  IDs; Privacy uses the fixed `page-privacy` document ID.
 - **Articles:** individual blog posts.
 - **Projects:** individual portfolio projects.
 - **Services:** individual service pages.
@@ -64,13 +65,15 @@ generated CSS class patches are used.
   cleanup rather than deleting or hiding it.
 
 The grouping uses the existing `contentPage.kind` field. Drafts remain visible
-alongside published content. The five singleton bindings reuse existing document
-IDs: no content was copied, migrated, deleted, or published. Field names/types,
-approval settings, and team permissions are unchanged. Studio navigation and
-validation are not Content Lake access-control boundaries.
+alongside published content. The original five singleton bindings reuse existing
+document IDs. Privacy adds a `privacy` Page kind at `/privacy`; creating its draft
+prefills the website's existing notice through local singleton initial values.
+Adding this configuration does not create, migrate, delete, or publish remote
+documents. Approval settings and team permissions are unchanged. Studio navigation
+and validation are not Content Lake access-control boundaries.
 
 Main Pages has no create action and singleton documents have no Duplicate action.
-Their path and kind are read-only; validation also reserves those five paths for
+Their path and kind are read-only; validation also reserves those six paths for
 the designated IDs. Existing Delete and Unpublish controls remain available. If
 a main page is deleted, its singleton editor recreates the same fixed document ID
 with the correct path/kind and Draft approval status, not a second page.
@@ -90,6 +93,25 @@ are applied in `schemaTypes/contentPage.ts`. Keep
 `initialValueTemplates()` last in each pane's builder chain: the installed Sanity
 builder can re-infer all type templates after later calls. Search results use
 Sanity's fallback editor instead of incorrectly opening articles under Main Pages.
+
+Privacy's initial notice lives in `structure/privacy-initial-value.mjs` and uses
+native Portable Text blocks. It is only applied to a new draft, so opening an
+existing document does not overwrite editor changes. The website keeps its current
+notice until a valid Privacy page is approved and published; removing or unpublishing
+the CMS notice restores that fallback. Keep the initial draft text aligned with
+the website's fallback when deliberately updating the baseline notice.
+
+Page content is optional for Section listing pages: `/services`, `/portfolio`, and
+`/blog` can show their introduction and automatic entry collection without body
+blocks. Other Page kinds retain their required content validation. A separate
+Social sharing image remains optional; the website uses the Hero image for social
+previews when no Social sharing image is supplied. An explicit Social sharing image
+always takes precedence.
+
+Rebuild and redeploy both the standalone Studio and the Next.js website to enable
+the editor and rendering changes. No remote dataset mutation or deployment is
+performed by these source changes. Editors can then update the Privacy draft under
+Main Pages and publish when ready.
 
 ## Generated page paths
 

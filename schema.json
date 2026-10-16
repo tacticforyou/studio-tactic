@@ -184,6 +184,10 @@
             {
               "type": "string",
               "value": "contact"
+            },
+            {
+              "type": "string",
+              "value": "privacy"
             }
           ]
         },

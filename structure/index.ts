@@ -21,6 +21,7 @@ const mainPageIcons: Record<string, typeof DocumentIcon> = {
   'page-services': CaseIcon,
   'page-portfolio': ImagesIcon,
   'page-blog': ComposeIcon,
+  'page-privacy': DocumentIcon,
 }
 
 // Keep initialValueTemplates last on each pane; later builder calls can re-infer all templates.

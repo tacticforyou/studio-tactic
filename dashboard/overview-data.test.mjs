@@ -57,7 +57,7 @@ const publishedDocuments = [
 test('overview counts normalized drafts once and keeps main-page counts canonical', async () => {
   const result = await runQuery(overviewQuery, draftDocuments)
   assert.deepEqual(result.groups, [
-    {id: 'main-pages', total: 5, drafts: 1},
+    {id: 'main-pages', total: 6, drafts: 1},
     {id: 'articles', total: 4, drafts: 2},
     {id: 'projects', total: 1, drafts: 0},
     {id: 'services', total: 1, drafts: 1},
@@ -73,7 +73,7 @@ test('published snapshot approval remains independent of a changed draft approva
   const overview = await runQuery(overviewQuery, draftDocuments)
   const published = await runQuery(publishedQuery, publishedDocuments)
   assert.deepEqual(published.groups, [
-    {id: 'main-pages', approved: 4},
+    {id: 'main-pages', approved: 5},
     {id: 'articles', approved: 2},
     {id: 'projects', approved: 0},
     {id: 'services', approved: 0},

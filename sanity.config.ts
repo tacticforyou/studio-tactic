@@ -31,13 +31,13 @@ export default defineConfig({
   },
 
   document: {
-    singletons: mainPages.map(({id, documentId, title, kind, path}) =>
+    singletons: mainPages.map(({id, documentId, title, kind, path, initialValue}) =>
       defineSingleton({
         id,
         documentId,
         title,
         schemaType: 'contentPage',
-        initialValue: {kind, path, status: 'draft', blocks: []},
+        initialValue: {kind, path, status: 'draft', blocks: [], ...initialValue},
       }),
     ),
   },

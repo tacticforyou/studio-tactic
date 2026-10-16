@@ -4,11 +4,12 @@ import {PagePathInput} from '../components/PagePathInput.mjs'
 import {getMainPage, validateMainPagePath} from '../structure/content-groups.mjs'
 
 const contentPath =
-  /^\/(?:about|contact|services|portfolio|blog)$|^\/(?:services|portfolio|blog)\/[a-z0-9]+(?:-[a-z0-9]+)*$/
+  /^\/(?:about|contact|privacy|services|portfolio|blog)$|^\/(?:services|portfolio|blog)\/[a-z0-9]+(?:-[a-z0-9]+)*$/
 
 function expectedKind(path: string) {
   if (path === '/about') return 'about'
   if (path === '/contact') return 'contact'
+  if (path === '/privacy') return 'privacy'
   if (['/services', '/portfolio', '/blog'].includes(path)) return 'listing'
   if (path.startsWith('/services/')) return 'service'
   if (path.startsWith('/portfolio/')) return 'project'
@@ -34,7 +35,7 @@ export const contentPage = defineType({
         rule.required().custom(async (path, context) => {
           if (!path) return true
           if (!contentPath.test(path)) {
-            return 'Use /about, /contact, a section root, or a lowercase slug under /services, /portfolio, or /blog.'
+            return 'Use /about, /contact, /privacy, a section root, or a lowercase slug under /services, /portfolio, or /blog.'
           }
 
           const mainPageValidation = validateMainPagePath(path, context.document?._id)
@@ -63,6 +64,7 @@ export const contentPage = defineType({
           {title: 'Article', value: 'article'},
           {title: 'About', value: 'about'},
           {title: 'Contact', value: 'contact'},
+          {title: 'Privacy', value: 'privacy'},
         ],
       },
       validation: (rule) =>
@@ -106,7 +108,12 @@ export const contentPage = defineType({
     }),
     defineField({name: 'eyebrow', title: 'Section label', type: 'string'}),
     defineField({name: 'hero', title: 'Hero image', type: 'siteImage'}),
-    defineField({name: 'socialImage', title: 'Social sharing image', type: 'siteImage'}),
+    defineField({
+      name: 'socialImage',
+      title: 'Social sharing image',
+      type: 'siteImage',
+      description: 'Optional. The hero image is used for social sharing when this is empty.',
+    }),
     defineField({
       name: 'teamIntro',
       title: 'Team introduction',
@@ -163,6 +170,8 @@ export const contentPage = defineType({
       name: 'blocks',
       title: 'Page content',
       type: 'array',
+      description:
+        'Optional for section listings; add content above the automatic page collection.',
       of: [
         defineArrayMember({
           type: 'block',
@@ -233,7 +242,12 @@ export const contentPage = defineType({
         }),
         defineArrayMember({type: 'imageBlock'}),
       ],
-      validation: (rule) => rule.required(),
+      validation: (rule) =>
+        rule.custom((value, context) =>
+          context.document?.kind === 'listing' || value != null
+            ? true
+            : 'Page content is required.',
+        ),
     }),
     defineField({name: 'author', type: 'string'}),
     defineField({

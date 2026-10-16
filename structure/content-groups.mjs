@@ -1,6 +1,7 @@
 import {getPublishedId} from 'sanity'
+import {privacyInitialValue} from './privacy-initial-value.mjs'
 
-// Pin the existing production documents without rewriting IDs or migrating content.
+// Preserve existing production IDs; new main pages use a fixed, named document ID.
 export const mainPages = [
   {
     id: 'page-about',
@@ -37,13 +38,21 @@ export const mainPages = [
     kind: 'listing',
     path: '/services',
   },
+  {
+    id: 'page-privacy',
+    title: 'Privacy',
+    documentId: 'page-privacy',
+    kind: 'privacy',
+    path: '/privacy',
+    initialValue: privacyInitialValue,
+  },
 ]
 
 export const contentGroups = [
   {
     id: 'main-pages',
     title: 'Main Pages',
-    kinds: ['about', 'contact', 'listing'],
+    kinds: ['about', 'contact', 'listing', 'privacy'],
     templates: [],
   },
   {id: 'articles', title: 'Articles', kinds: ['article'], templates: ['page-article']},
