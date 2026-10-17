@@ -1,0 +1,766 @@
+[
+  {
+    "_createdAt": "2026-10-17T16:36:47Z",
+    "_id": "drafts.ffe7d239-82dc-466e-a8bc-654ef9dc285e",
+    "_rev": "eiu79TX1NVj1DBWfKYYD97",
+    "_system": {
+      "base": {
+        "id": "ffe7d239-82dc-466e-a8bc-654ef9dc285e",
+        "rev": "oUoBiDpxprNmFkGmd4Yl64"
+      }
+    },
+    "_type": "contentPage",
+    "_updatedAt": "2026-10-17T20:05:30Z",
+    "blocks": [
+      {
+        "_key": "1e29bc9d115a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c91b0d1f1d07",
+            "_type": "span",
+            "marks": [],
+            "text": "A strong brand project begins before the first visual direction. It begins with a shared understanding of the problem. When a brief asks only for a fresh look, the team has to guess what success means. A more useful brief explains who needs to understand the brand, what is getting in their way, and what should change."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3ec54f2786ad",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "81e42c0798d4",
+            "_type": "span",
+            "marks": [],
+            "text": "Begin with a specific audience"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "f6b843b2f0d2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2780081fca22",
+            "_type": "span",
+            "marks": [],
+            "text": "Describe the people you need to reach in terms of their situation, not just their age or location. What are they trying to do? What do they already know? What makes them hesitate? A clear audience gives every later decision a reference point, from the tone of a headline to the information on a landing page."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "3548d857683a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3606d212e33f",
+            "_type": "span",
+            "marks": [],
+            "text": "Name the real problem"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "683882669ea4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "72d13cedfb62",
+            "_type": "span",
+            "marks": [],
+            "text": "Separate the business goal from the communication problem. Growing enquiries may be the goal; an unclear offer may be the communication problem. Design can help explain an offer, establish a recognizable presence, or make a next step easier to find. Naming that role keeps the project focused on something design can meaningfully address."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ff0173ad9b4a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5a43a4ca817a",
+            "_type": "span",
+            "marks": [],
+            "text": "Define the essentials"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "622572c8a187",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "757ce886479d",
+            "_type": "span",
+            "marks": [],
+            "text": "Write down the central message, the evidence that supports it, and the practical constraints. Include the channels the identity must work across, the people who will use it, and the assets that must remain. Distinguish firm requirements from assumptions that the project should test."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "7ea719900f68",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f14d52cb645c",
+            "_type": "span",
+            "marks": [],
+            "text": "Agree on a useful measure of success"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "b0fdfdd91dc3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0dfbb0b3873f",
+            "_type": "span",
+            "marks": [],
+            "text": "Choose a few observable outcomes. Can a new visitor describe the offer? Can the team produce a consistent presentation? Can a customer find the next step without help? These questions create a better review conversation than asking whether a direction feels modern."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "787fd1a6c653",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "42f609b266f4",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep the brief useful"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "ebe5b7e6e454",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2c0894c8ff2c",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep the brief short enough to use. A concise document that people return to throughout the project is more valuable than a long document that disappears after kickoff. The brief should support decisions, and it should be revised when new evidence changes the problem."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "description": "A focused brand brief turns broad ambitions into clear design decisions. Start with the audience, the problem, and the change you want to make.",
+    "eyebrow": "Brand strategy",
+    "hero": {
+      "_type": "siteImage",
+      "alt": "Pencil sketches on textured cream paper with a green glass paperweight.",
+      "asset": {
+        "_ref": "image-f12a54146c39ef3d01d82db0b4b7315df66a5022-1672x941-png",
+        "_type": "reference"
+      }
+    },
+    "kind": "article",
+    "path": "/blog/a-practical-brand-brief",
+    "publishedAt": "2026-10-17T16:39:45.470Z",
+    "status": "published",
+    "title": "Start with the Right Question: A Practical Brand Brief"
+  },
+  {
+    "_createdAt": "2026-10-17T16:37:09Z",
+    "_id": "drafts.92a39ded-f2b9-4acf-a157-09e9a9df5eb9",
+    "_rev": "eiu79TX1NVj1DBWfKYYD97",
+    "_system": {
+      "base": {
+        "id": "92a39ded-f2b9-4acf-a157-09e9a9df5eb9",
+        "rev": "JbEcLtv325wEBDy8eAj9MM"
+      }
+    },
+    "_type": "contentPage",
+    "_updatedAt": "2026-10-17T20:05:30Z",
+    "blocks": [
+      {
+        "_key": "cb6643191b81",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "508ae27c8a75",
+            "_type": "span",
+            "marks": [],
+            "text": "A logo is an important identifier, but it cannot carry every message on its own. A brand also appears in proposals, small social posts, product pages, and everyday documents. A useful visual identity gives all of these applications a shared character without making every piece look identical."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "a4ffaf10135f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4c03743c9be5",
+            "_type": "span",
+            "marks": [],
+            "text": "Give every element a role"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "081e403fcd03",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "26d8117a6535",
+            "_type": "span",
+            "marks": [],
+            "text": "Start by defining the relationships between the elements. Typography establishes hierarchy and tone. Color can distinguish information or draw attention. Image direction shapes how a subject is presented. Layout determines how these parts work together. Each choice should have a clear role, rather than becoming another decoration to manage."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "b29d674ab3f3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7372a43a956f",
+            "_type": "span",
+            "marks": [],
+            "text": "Test the identity in real applications"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "1ab7819212a4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "236e7c775408",
+            "_type": "span",
+            "marks": [],
+            "text": "Build from real applications. Test an early direction on a page with a long title, a presentation with dense information, and a small mobile screen. These examples reveal problems that a polished logo presentation can hide. A typeface may look expressive in a short headline but struggle in a table. A distinctive color combination may need a quieter companion for longer reading."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "6d5ab0b1fee5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "98e31f3ee77f",
+            "_type": "span",
+            "marks": [],
+            "text": "Define repeatable rules"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "0b826605696b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7634e1926d04",
+            "_type": "span",
+            "marks": [],
+            "text": "Consistency comes from repeatable rules. Define a small set of text styles, spacing relationships, color roles, and image treatments. Explain which parts are fixed and where a designer can adapt. A system with no room to respond becomes repetitive; a system with no boundaries becomes difficult to recognize."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ce6db22f1784",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "67a81711fe6c",
+            "_type": "span",
+            "marks": [],
+            "text": "Build accessibility into the system"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "166651c5d3ff",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "dbbec296201d",
+            "_type": "span",
+            "marks": [],
+            "text": "Accessibility belongs in these decisions from the beginning. Check text contrast in the actual combinations the team will use. Make hierarchy clear through more than color, and test legibility at realistic sizes. A brand should still communicate when an image is missing or a layout becomes narrow."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "358ccb23f163",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a9e24fbd673e",
+            "_type": "span",
+            "marks": [],
+            "text": "Make the handover practical"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "6907df56d342",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1e4d5816fec8",
+            "_type": "span",
+            "marks": [],
+            "text": "Finally, make the handover practical. Provide editable templates, organized source files, and short examples of common tasks. Show how to build a new page or presentation, not just how to place a logo. The best identity system gives a team enough structure to move quickly and enough flexibility to keep communicating clearly."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "description": "A useful visual identity connects typography, color, imagery, and layout into a system that a team can apply with confidence.",
+    "eyebrow": "Visual identity",
+    "hero": {
+      "_type": "siteImage",
+      "alt": "Folded ivory paper, embossed shapes, and green color cards arranged as a visual identity study.",
+      "asset": {
+        "_ref": "image-77e4bb4fd59bc57302fb2075b5b455d5ab5970bd-1672x941-png",
+        "_type": "reference"
+      }
+    },
+    "kind": "article",
+    "path": "/blog/building-a-visual-identity-that-works",
+    "publishedAt": "2026-10-17T16:39:00.000Z",
+    "status": "published",
+    "title": "Beyond the Logo: Building a Visual Identity That Works"
+  },
+  {
+    "_createdAt": "2026-10-17T16:37:31Z",
+    "_id": "drafts.4139c506-d282-43d7-be00-1a7dbb950b3e",
+    "_rev": "eiu79TX1NVj1DBWfKYYD97",
+    "_system": {
+      "base": {
+        "id": "4139c506-d282-43d7-be00-1a7dbb950b3e",
+        "rev": "JbEcLtv325wEBDy8eAjA6y"
+      }
+    },
+    "_type": "contentPage",
+    "_updatedAt": "2026-10-17T20:05:30Z",
+    "blocks": [
+      {
+        "_key": "34798cf8a802",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "926d34b807d7",
+            "_type": "span",
+            "marks": [],
+            "text": "A website often asks a visitor to do something: understand an offer, explore a project, make an enquiry, or choose a service. The design works best when those actions grow naturally from the information on the page. Start with the visitor's questions, then decide what the interface needs to show."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "4fd0b807b01d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f7f4538a0e3b",
+            "_type": "span",
+            "marks": [],
+            "text": "Map the visitor journeys"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "960ac4d6e966",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d483655e8aad",
+            "_type": "span",
+            "marks": [],
+            "text": "Map the important journeys before arranging the pages. Someone discovering a studio for the first time may need a clear explanation of its work. Someone arriving through a recommendation may want to see relevant projects. A returning visitor may simply need contact details. These journeys can share a website without being forced through the same sequence."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "691dae0e745d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5a2703a094a2",
+            "_type": "span",
+            "marks": [],
+            "text": "Give each page a clear purpose"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "c5018bc3f2b4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "019c9b5ad687",
+            "_type": "span",
+            "marks": [],
+            "text": "Give each page a main purpose. A service page should explain who the service is for, what problem it addresses, and what working together involves. A project page should make the challenge and design decisions understandable. A contact page should set expectations about the next conversation. When a page tries to do everything, its most useful information becomes harder to find."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ead759da9da8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f74ec0c023c6",
+            "_type": "span",
+            "marks": [],
+            "text": "Shape content and layout together"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "fa5deda7e6ec",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "25ca66b653d7",
+            "_type": "span",
+            "marks": [],
+            "text": "Write the content while shaping the layout. Real headings and realistic paragraph lengths reveal whether a page has a clear hierarchy. Placeholder text can make a weak structure appear balanced because it avoids the difficult questions. A useful heading tells a reader what they will learn; a useful button tells them what will happen."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "83db5871f8db",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a3ec6d99014e",
+            "_type": "span",
+            "marks": [],
+            "text": "Design the complete mobile experience"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "92ec15639f29",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3012a4d8d33f",
+            "_type": "span",
+            "marks": [],
+            "text": "Treat the mobile layout as a complete experience. Check the order of information, the size and spacing of controls, and whether essential content depends on hovering or animation. Keep the main action easy to locate, but allow people to read before asking for a commitment."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "104ec5b2831e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "133b2fb5d84d",
+            "_type": "span",
+            "marks": [],
+            "text": "Review with realistic tasks"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "c085a5e24ca2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2433eb6a3913",
+            "_type": "span",
+            "marks": [],
+            "text": "Review the site by asking someone to complete a few realistic tasks. Ask them to explain the offer, find a relevant example, and describe how they would get in touch. Watch where they hesitate. Their questions are evidence for the next revision. A clear website earns its next step by helping people understand the step before it."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "description": "Shape a website around the questions visitors need answered, with clear page structure, useful content, and a next step that fits their intent.",
+    "eyebrow": "Digital design",
+    "hero": {
+      "_type": "siteImage",
+      "alt": "Forest green steps between ivory architectural planes lead toward a bright opening.",
+      "asset": {
+        "_ref": "image-a9dfe949130b1b0d7e9d0c584afeb62be6661a57-1672x941-png",
+        "_type": "reference"
+      }
+    },
+    "kind": "article",
+    "path": "/blog/designing-a-website-around-clear-next-steps",
+    "publishedAt": "2026-10-17T16:39:00.000Z",
+    "status": "published",
+    "title": "Designing a Website Around Clear Next Steps"
+  },
+  {
+    "_createdAt": "2026-10-17T16:37:51Z",
+    "_id": "drafts.ae244d03-cdda-4b5c-8c2d-6ac34fbc35c1",
+    "_rev": "eiu79TX1NVj1DBWfKYYD97",
+    "_system": {
+      "base": {
+        "id": "ae244d03-cdda-4b5c-8c2d-6ac34fbc35c1",
+        "rev": "eiu79TX1NVj1DBWfKXYo01"
+      }
+    },
+    "_type": "contentPage",
+    "_updatedAt": "2026-10-17T20:05:30Z",
+    "blocks": [
+      {
+        "_key": "25e8de9abe5f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4fbb6bdeeaa5",
+            "_type": "span",
+            "marks": [],
+            "text": "Motion gives a visual identity another dimension: time. A word can arrive gradually, a shape can reveal a relationship, and a transition can connect two ideas. The useful question is what that movement helps someone understand. Once the purpose is clear, the animation becomes easier to judge."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "ad12fb0863af",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5767c4ab89a7",
+            "_type": "span",
+            "marks": [],
+            "text": "Choose a motion vocabulary"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "605bc0c48c77",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b787f552ee0f",
+            "_type": "span",
+            "marks": [],
+            "text": "Choose a small motion vocabulary. Decide how elements enter, leave, and respond. A calm identity might use measured transitions and restrained changes in scale. A more energetic identity might use sharper changes in pace. These are design choices to test in context, rather than rules that every brand must follow."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c596c2a3ba54",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "190233c73819",
+            "_type": "span",
+            "marks": [],
+            "text": "Connect motion to the visual identity"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "216cccd72a75",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "01f90aa4eeb6",
+            "_type": "span",
+            "marks": [],
+            "text": "Keep the relationship to the static identity visible. Type, composition, color, and imagery should still feel connected to the rest of the system. Motion can express those elements in new ways, but it should not require a different brand every time a video or interface is produced."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "274e8b9ed66c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d2d32f56f184",
+            "_type": "span",
+            "marks": [],
+            "text": "Use timing to guide attention"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "072f2007ae6a",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "69cd5a678f57",
+            "_type": "span",
+            "marks": [],
+            "text": "Use timing to support hierarchy. Introduce the main idea first, then reveal supporting information when it helps the sequence. Avoid giving every element the same dramatic entrance. If a viewer must wait for basic information, the animation may be competing with the message it was meant to support."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "fd1d1c2c0d40",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "3653e4f94dae",
+            "_type": "span",
+            "marks": [],
+            "text": "Plan for each viewing context"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "fe56e1131290",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4205cac2c95c",
+            "_type": "span",
+            "marks": [],
+            "text": "Plan for the places where motion will appear. A short social clip, a presentation, and a website have different viewing conditions. Check whether the message still makes sense without sound, whether essential text stays visible long enough to read, and whether a small-screen crop changes the composition."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "1adff0f655b8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f788099c71e5",
+            "_type": "span",
+            "marks": [],
+            "text": "Respect reduced motion preferences"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "cdefab1067ea",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2cababe5f879",
+            "_type": "span",
+            "marks": [],
+            "text": "On the web, provide a useful experience for people who prefer reduced motion. Essential meaning should remain available in a static or quieter version. Avoid making a decorative effect the only way to discover information or complete an action."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "325753ddf324",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f14a5b63c902",
+            "_type": "span",
+            "marks": [],
+            "text": "Document a system others can use"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "bfb92ce3af26",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "e376bc6c7dcb",
+            "_type": "span",
+            "marks": [],
+            "text": "Document the system with a few practical examples. Include timing ranges, transition behavior, and guidance on when to keep a composition still. A motion identity becomes sustainable when other people can understand its decisions and apply them consistently. Movement should give the message a clearer rhythm, not give the audience another obstacle."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "description": "Give brand motion a clear role through deliberate timing, consistent transitions, and experiences that also work when movement is reduced.",
+    "eyebrow": "Motion design",
+    "hero": {
+      "_type": "siteImage",
+      "alt": "A flowing green ribbon passes through a sequence of suspended ivory rings.",
+      "asset": {
+        "_ref": "image-d28bd6f131357fb884c353f8ca7d6beead0693ab-1672x941-png",
+        "_type": "reference"
+      }
+    },
+    "kind": "article",
+    "path": "/blog/motion-with-purpose",
+    "publishedAt": "2026-10-17T16:41:14.751Z",
+    "status": "published",
+    "title": "Motion with Purpose: Making a Brand Feel Consistent"
+  }
+]

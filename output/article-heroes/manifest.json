@@ -1,0 +1,33 @@
+{
+  "mode": "Built-in image_gen",
+  "images": [
+    {
+      "name": "brand-brief",
+      "id": "ffe7d239-82dc-466e-a8bc-654ef9dc285e",
+      "path": "/blog/a-practical-brand-brief",
+      "alt": "Pencil sketches on textured cream paper with a green glass paperweight.",
+      "source": "C:\\Users\\Hayyaun\\.codex\\generated_images\\01a14ab8-33c8-7f62-9a83-0879731ceda5\\exec-1028fb43-b453-454a-932b-9a725073532c.png"
+    },
+    {
+      "name": "visual-identity",
+      "id": "92a39ded-f2b9-4acf-a157-09e9a9df5eb9",
+      "path": "/blog/building-a-visual-identity-that-works",
+      "alt": "Folded ivory paper, embossed shapes, and green color cards arranged as a visual identity study.",
+      "source": "C:\\Users\\Hayyaun\\.codex\\generated_images\\01a14ab8-33c8-7f62-9a83-0879731ceda5\\exec-dfbd3cb1-231a-4cd4-a8a4-6168c71459e9.png"
+    },
+    {
+      "name": "website-design",
+      "id": "4139c506-d282-43d7-be00-1a7dbb950b3e",
+      "path": "/blog/designing-a-website-around-clear-next-steps",
+      "alt": "Forest green steps between ivory architectural planes lead toward a bright opening.",
+      "source": "C:\\Users\\Hayyaun\\.codex\\generated_images\\01a14ab8-33c8-7f62-9a83-0879731ceda5\\exec-4dbbc116-470f-47b0-a939-adddaf8247dc.png"
+    },
+    {
+      "name": "motion-design",
+      "id": "ae244d03-cdda-4b5c-8c2d-6ac34fbc35c1",
+      "path": "/blog/motion-with-purpose",
+      "alt": "A flowing green ribbon passes through a sequence of suspended ivory rings.",
+      "source": "C:\\Users\\Hayyaun\\.codex\\generated_images\\01a14ab8-33c8-7f62-9a83-0879731ceda5\\exec-aa724d76-d72e-4bf8-b872-1e2307032593.png"
+    }
+  ]
+}
