@@ -1,0 +1,165 @@
+{
+  "id": "9714f99d-095d-41b9-b663-f5805c447ebf",
+  "changes": {
+    "title": "AI Needs a Point of View: Directing Images with Intent",
+    "description": "AI imagery works best with a clear creative direction. Shape the concept, visual language, and edit around the message you want people to remember.",
+    "eyebrow": "AI art & film",
+    "blocks": [
+      {
+        "_key": "8d1fe46c450e",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "0d110b94741f",
+            "_type": "span",
+            "text": "An image can be visually striking and still say very little about the brand behind it. Working with AI makes creative direction a practical starting point: decide what the image needs to communicate, then shape the process around that intention. Each decision should make the next one more focused. The useful question is whether the result belongs to this project, for this audience, in this particular context.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "e643ce3aceec",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "7f5664d4a56a",
+            "_type": "span",
+            "text": "Begin with an idea worth showing",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "80349e8ddbc4",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "3fe51c5d5a3f",
+            "_type": "span",
+            "text": "Write the central idea in a sentence before describing the look. What should someone understand or feel after seeing the work? A campaign about care might explore attention to small details. A film about connection might follow a relationship between objects. Choose a visual idea that carries the message, and use it to judge the images that follow.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "be7a3b6d4d26",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "8ed3cb340bda",
+            "_type": "span",
+            "text": "Define a visual language",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "f4b497f32840",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "f909dd98fc22",
+            "_type": "span",
+            "text": "Set a few clear boundaries for composition, color, materials, lighting, and movement. Gather references for specific reasons: the softness of a shadow, the scale of a subject, or the rhythm between frames. Explain those choices in your own words. A small, deliberate set of decisions gives you something consistent to develop and makes feedback easier to act on.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "fcb65cdcef74",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "fd2d88dfb5c8",
+            "_type": "span",
+            "text": "Build the sequence before the shots",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "1e911223c8e1",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "b2dee2f0f19f",
+            "_type": "span",
+            "text": "For a film, sketch the sequence before generating individual scenes. Decide what each shot introduces, how it connects to the next, and where the viewer needs a moment to understand. Make a rough edit with simple stills. This reveals whether the story has a clear beginning, progression, and ending while changes are still easy to make.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "6c793bfb1c4e",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "74b13a7bae0a",
+            "_type": "span",
+            "text": "Choose with the brief in view",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "45da6770f7db",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "1ce574808af5",
+            "_type": "span",
+            "text": "Review a small selection against the original idea. Check whether the subject reads clearly, whether the composition leaves room for type, and whether the details hold up at the intended size. Look closely at objects, surfaces, and relationships that should remain consistent. Keep a record of useful directions and the choices behind them so the next round has a clear purpose.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "02705ace55d6",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "05410229a8a9",
+            "_type": "span",
+            "text": "Finish for the place it will live",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_key": "9274d54d127a",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "491c621c46f6",
+            "_type": "span",
+            "text": "Treat the selected image or sequence as material to refine. Adjust the crop, color, pacing, typography, and sound together. Test the work inside its actual setting: a vertical social post, a website hero, or a presentation. Make sure the message survives a small screen, a silent viewing, or a different crop. Leave enough time for this final stage. Creative direction continues through the edit and delivery; it is what connects an interesting result to a finished piece of communication.",
+            "marks": []
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2026-10-17T22:05:24.322Z"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "capturedAt": "2026-10-17T22:02:33.670Z",
+  "docs": [
+    {
+      "_createdAt": "2026-10-12T00:55:15Z",
+      "_id": "9714f99d-095d-41b9-b663-f5805c447ebf",
+      "_rev": "MTVa8wqBVj3WOA5nedjWY4",
+      "_system": {
+        "base": {
+          "id": "9714f99d-095d-41b9-b663-f5805c447ebf",
+          "rev": "txIIGYqY4cWJMKfC4yNzns"
+        }
+      },
+      "_type": "contentPage",
+      "_updatedAt": "2026-10-12T14:52:09Z",
+      "author": "Hayyan Hami",
+      "blocks": [
+        {
+          "_key": "335f185fc2dd",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "21dc0e5dfe7b",
+              "_type": "span",
+              "marks": [],
+              "text": "Content"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "description": "Our first article",
+      "hero": {
+        "_type": "siteImage",
+        "alt": "A tree in a landscape",
+        "asset": {
+          "_ref": "image-3cc260398224291d78fc7ea749c256e41ea67308-1800x1202-jpg",
+          "_type": "reference"
+        }
+      },
+      "kind": "article",
+      "path": "/blog/first-article",
+      "publishedAt": "2026-10-12T00:56:32.905Z",
+      "status": "published",
+      "title": "First Article"
+    },
+    null
+  ]
+}

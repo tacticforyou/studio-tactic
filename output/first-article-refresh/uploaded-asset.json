@@ -1,0 +1,83 @@
+{
+  "_createdAt": "2026-10-17T22:05:34Z",
+  "_id": "image-120512abb35498e75bf691c46e8f9034f199acf0-1672x941-png",
+  "_rev": "JbEcLtv325wEBDy8eCNvwe",
+  "_type": "sanity.imageAsset",
+  "_updatedAt": "2026-10-17T22:05:34Z",
+  "assetId": "120512abb35498e75bf691c46e8f9034f199acf0",
+  "extension": "png",
+  "metadata": {
+    "_type": "sanity.imageMetadata",
+    "blurHash": "M9Av%n?G01$k~C4=s:t5R+of4:Rk~BxtE1",
+    "dimensions": {
+      "_type": "sanity.imageDimensions",
+      "aspectRatio": 1.7768331562167907,
+      "height": 941,
+      "width": 1672
+    },
+    "hasAlpha": false,
+    "isOpaque": true,
+    "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAPoAAAD6AG1e1JrAAACgUlEQVQokSWQ21ISAQCG90KOC7tLsHKGXXaRPbkLyIIuu5wWBFFEGIocKzySYlpDo45a2qSZ44xNJy3LsS66qCt9gd6tIR/gm+//fsDr8ZAExgtMcJD0kB5/wEsE8ADu8/vcHrfT6ey321GbzWqxwBBkNptBEDTo9VqtTqPRagCnwyHQRKU0Ek9zKIna3FYM95EExlLEcJRNioNhLuTzuqxWC4JAEGQ2mUCDQae7he39aDIaet4en1nIUJLfQdhwwhciA+nhyLP5+kG3tTxTiQkUiloRCwzDPbnRqNfptD0YtVlFFl9r5dvrau4eH5YJXghyFFkZVc6PutffD99uzBfliMuBIkhvuckEGo3/1VoNcMcCB32OUoYfnRJGJmm5xKhpoSBHnszVb36c/P3z6f3LTqMo4T4nBEEmk8loNOp70do+TR9gQWC/C41HgqyI4aJrKEXWxsT1h6Mf9+avL17cXOx/frXyuFkM0wEEgXt33RZrNT3Y7XLxIWyyEJNUmkx6kiW63VJPd2Z+HrcvDxa+7rXOdh/td+rldNTt7EcQGOllm0DQCIIGgGeZ8VSs2yo2miPiBF1uxTe2p76cdn6fb/169/TqcPHq9dzZ7oOV+6ooBIO4m8RcuNeBeey41w5I4tBcNftmtTZdVyIpWpmMTC/mNreaH45XLk5Xv520r44XLg9mD9fqrZpSyUYL8mAmwaZFOptggIyUWG4Ujjq1u2MSxZF0mIhJTC4fbTaUpVm1s1ToLpe2OxObi+XOtNqqys1SopobGlOEYpIH8oq0VM/vzJarajxEBcgBLEThDIWLkYGczKkZLp1iMgqTlVk1yeUlLjfMKNFQgidibOAfCpmRWlGsKjUAAAAASUVORK5CYII=",
+    "palette": {
+      "_type": "sanity.imagePalette",
+      "darkMuted": {
+        "_type": "sanity.imagePaletteSwatch",
+        "background": "#453e30",
+        "foreground": "#fff",
+        "population": 9.48,
+        "title": "#fff"
+      },
+      "darkVibrant": {
+        "_type": "sanity.imagePaletteSwatch",
+        "background": "#644c1c",
+        "foreground": "#fff",
+        "population": 0.01,
+        "title": "#fff"
+      },
+      "dominant": {
+        "_type": "sanity.imagePaletteSwatch",
+        "background": "#453e30",
+        "foreground": "#fff",
+        "population": 9.48,
+        "title": "#fff"
+      },
+      "lightMuted": {
+        "_type": "sanity.imagePaletteSwatch",
+        "background": "#c8b49c",
+        "foreground": "#000",
+        "population": 1.1,
+        "title": "#fff"
+      },
+      "lightVibrant": {
+        "_type": "sanity.imagePaletteSwatch",
+        "background": "#debc96",
+        "foreground": "#000",
+        "population": 0.69,
+        "title": "#fff"
+      },
+      "muted": {
+        "_type": "sanity.imagePaletteSwatch",
+        "background": "#a58c6c",
+        "foreground": "#fff",
+        "population": 9.41,
+        "title": "#fff"
+      },
+      "vibrant": {
+        "_type": "sanity.imagePaletteSwatch",
+        "background": "#946c3c",
+        "foreground": "#fff",
+        "population": 0,
+        "title": "#fff"
+      }
+    },
+    "thumbHash": "TggKDIILuUaSeHd1jHkbkEQBaA=="
+  },
+  "mimeType": "image/png",
+  "originalFilename": "tactic-ai-creative-direction.png",
+  "path": "images/bpblgmmr/production/120512abb35498e75bf691c46e8f9034f199acf0-1672x941.png",
+  "sha1hash": "120512abb35498e75bf691c46e8f9034f199acf0",
+  "size": 1953984,
+  "title": "AI creative direction — TACTIC journal",
+  "uploadId": "054a4d4d1e2990dd792b8f1e410dade6d3be14b5",
+  "url": "https://cdn.sanity.io/images/bpblgmmr/production/120512abb35498e75bf691c46e8f9034f199acf0-1672x941.png"
+}
